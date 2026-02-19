@@ -6,8 +6,8 @@ public class Civil extends Paciente {
     private final int cambioInfeccion;
     private final int cambioSalud;
 
-    public Civil(UUID Id, int nivelInfeccion, int nivelSalud, String genoma) {
-        super(Id, nivelInfeccion, nivelSalud, genoma);
+    public Civil(int nivelInfeccion, int nivelSalud, String genoma) {
+        super(nivelInfeccion, nivelSalud, genoma);
         cambioInfeccion = 10;
         cambioSalud = -15;
     }
@@ -18,7 +18,13 @@ public class Civil extends Paciente {
     }
 
     @Override
-    public void Degradar(int cambioInfeccion, int cambioSalud) {
-
+    public void Degradar() {
+        if(NivelSalud + cambioSalud > 0){
+            NivelSalud += cambioSalud;
+        }
+        else{
+            isMuerto = true;
+        }
+        NivelInfeccion += cambioInfeccion;
     }
 }

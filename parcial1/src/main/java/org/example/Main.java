@@ -1,10 +1,14 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import org.example.Services.Recepcion;
+
 public class Main {
     static void main() {
-
-
+        try{
+            Recepcion r = new Recepcion("C:\\Users\\tomas\\Documents\\parcial\\arcilixix\\parcial1\\src\\main\\java\\org\\example\\Resources\\entradaPacientes.txt");
+            r.obtenerPacientes();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());;
+        }
     }
 }

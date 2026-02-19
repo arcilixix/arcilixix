@@ -3,17 +3,20 @@ package org.example.Model.Pacientes;
 import java.util.UUID;
 
 public abstract class Paciente {
-    UUID ID;
+    int ID;
     int NivelInfeccion;
     int NivelSalud;
     String Genoma;
+    boolean isMuerto;
+    public static int totalPacientes;
 
-    public Paciente(UUID Id, int nivelInfeccion, int nivelSalud, String genoma){
-        ID = Id;
+    public Paciente(int nivelInfeccion, int nivelSalud, String genoma){
+        ID = ++totalPacientes;
         NivelInfeccion = nivelInfeccion;
         NivelSalud = nivelSalud;
         Genoma = genoma;
+        isMuerto = false;
     }
-    public abstract void Degradar(int cambioInfeccion, int cambioSalud);
+    public abstract void Degradar();
     public abstract void Curar();
 }
