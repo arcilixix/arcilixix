@@ -24,7 +24,7 @@ public class Recepcion {
             archivo = new File(RutaArchivo);
             reader = new FileReader(archivo);
             bfReader = new BufferedReader(reader);
-            System.out.println("Working directory");
+            pacientes = obtenerPacientes();
         } catch (Exception e) {
             throw new RuntimeException("Error al crear recepción" + e.getMessage());
         }
@@ -72,8 +72,10 @@ public class Recepcion {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return pacientes;
     }
 
+    public List<Paciente> getPacientes() {
+        return pacientes;
+    }
 }

@@ -19,4 +19,16 @@ public abstract class Paciente {
     }
     public abstract void Degradar();
     public abstract void Curar();
+
+
+    @Override
+    public String toString() {
+        return "Paciente{" +
+                "ID=" + ID +
+                ", NivelInfeccion=" + NivelInfeccion +
+                ", NivelSalud=" + NivelSalud +
+                ", Genoma='" + Genoma + '\'' +
+                ", isMuerto=" + isMuerto +
+                '}';
+    }
 }
