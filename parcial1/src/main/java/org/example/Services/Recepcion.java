@@ -8,7 +8,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 
 public class Recepcion {
@@ -17,6 +19,7 @@ public class Recepcion {
     FileReader reader;
     BufferedReader bfReader;
     private List<Paciente> pacientes;
+    private Queue<Paciente> cola;
 
     public Recepcion(String rutaArchivo){
         try{
@@ -25,6 +28,7 @@ public class Recepcion {
             reader = new FileReader(archivo);
             bfReader = new BufferedReader(reader);
             pacientes = obtenerPacientes();
+            cola = crearCola();
         } catch (Exception e) {
             throw new RuntimeException("Error al crear recepción" + e.getMessage());
         }
@@ -73,6 +77,14 @@ public class Recepcion {
             e.printStackTrace();
         }
         return pacientes;
+    }
+
+    private Queue<Paciente> crearCola(){
+        Queue<Paciente> cola = new LinkedList();
+        for (Paciente p: pacientes){
+            cola.add(p);
+        }
+        return cola;
     }
 
     public List<Paciente> getPacientes() {

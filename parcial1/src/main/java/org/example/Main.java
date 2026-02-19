@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.Model.Pacientes.Paciente;
+import org.example.Services.AlmacenSuministros;
 import org.example.Services.Recepcion;
 
 import java.util.List;
@@ -15,6 +16,8 @@ public class Main {
             for (Paciente p : pacientes){
                 System.out.println(p.toString());
             }
+            AlmacenSuministros almacen = new AlmacenSuministros();
+            System.out.println(almacen.toString());
         } catch (Exception e) {
             System.out.println(e.getMessage());;
         }

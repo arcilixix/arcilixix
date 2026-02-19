@@ -1,4 +1,0 @@
-nivelInfeccion = 30, nivelSalud = 50, genoma = A8B504
-nivelInfeccion = 80, nivelSalud = 76, genoma = A8B504
-nivelInfeccion = 60, nivelSalud = 90, genoma = A8B504
-nivelInfeccion = 78, nivelSalud = 35, genoma = A8B504
